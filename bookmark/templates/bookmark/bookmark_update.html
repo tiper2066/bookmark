@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Bookmark Update{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}   <!-- 입력을 위한 보안 설정 코드 -->
+        {{ form.as_p }}   <!-- 장고가 알아서 필드를 꾸며준다. -->
+        <input type="submit" value="Update" class="btn btn-info btn-sm">
+    </form>
+{% endblock %}

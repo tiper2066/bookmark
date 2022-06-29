@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Confirm Delete{% endblock %}
+{% block content %}
+  <!-- 장고는 대부분 입력과 결과화면을 같은 뷰에서 처리하므로 action속성값이 빈경우가 많다. -->
+  <!-- action 속성값이 없을 경우 자기 자신으로 submit 한다. -->
+  <form action="" method="post">
+      {% csrf_token %}   <!-- 입력을 위한 보안 설정 코드 -->
+      {{ form.as_p }}   <!-- 장고가 알아서 필드를 꾸며준다. -->
+      <input type="submit" value="Add" class="btn btn-info btn-sm">
+  </form>
+{% endblock %}
